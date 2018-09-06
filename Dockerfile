@@ -13,8 +13,8 @@ ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
 # Install Node.js
-RUN install_packages curl ca-certificates && \
-    curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
+RUN install_packages curl ca-certificates gnupg && \
+    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     install_packages nodejs
 
 # Install Nuclide Remote Server
